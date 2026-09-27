@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Roast My Portfolio 🔥</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo">🔥 RoastMyPortfolio</div>
+
+      <div class="nav-right">
+        <a href="#how"> How it works </a>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          ☀️
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- HERO -->
+
+      <section class="hero">
+        <div class="badge">AI Portfolio Reviewer</div>
+
+        <h1>
+          Is your portfolio
+          <br />
+          <span>actually good?</span> 👀
+        </h1>
+
+        <p>
+          Drop your portfolio URL and get honest, AI-powered feedback on your
+          design, performance and accessibility.
+        </p>
+
+        <div class="input-box">
+          <input
+            type="url"
+            id="portfolioUrl"
+            placeholder="https://yourportfolio.com"
+            autocomplete="url"
+          />
+
+          <button id="reviewButton">🔥 Roast My Portfolio</button>
+        </div>
+
+        <p class="small-text">No signup. Just feedback.</p>
+      </section>
+
+      <!-- LOADING -->
+
+      <section id="loading" class="loading hidden">
+        <div class="spinner"></div>
+
+        <h3>Roasting your portfolio...</h3>
+
+        <p>
+          Looking through the good, the bad and the "what were you thinking?" 😭
+        </p>
+      </section>
+
+      <!-- ERROR -->
+
+      <section id="error" class="error hidden">
+        <h3>Oops! Something went wrong.</h3>
+
+        <p id="errorMessage"></p>
+      </section>
+
+      <!-- RESULTS -->
+
+      <section id="results" class="results hidden">
+        <div class="results-heading">
+          <p class="badge">Your Review</p>
+
+          <h2>Portfolio Report</h2>
+
+          <p id="reviewedUrl"></p>
+        </div>
+
+        <!-- SCORE CARDS -->
+
+        <div class="score-grid">
+          <div class="score-card">
+            <span>Overall</span>
+            <strong id="overallScore">-</strong>
+            <small>/ 10</small>
+          </div>
+
+          <div class="score-card">
+            <span>UI / UX</span>
+            <strong id="uiScore">-</strong>
+            <small>/ 10</small>
+          </div>
+
+          <div class="score-card">
+            <span>Performance</span>
+            <strong id="performanceScore">-</strong>
+            <small>/ 10</small>
+          </div>
+
+          <div class="score-card">
+            <span>Accessibility</span>
+            <strong id="accessibilityScore">-</strong>
+            <small>/ 10</small>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="section-title">📊 Score Overview</div>
+
+          <div class="chart">
+            <div class="chart-row">
+              <span>Overall</span>
+              <div class="bar-background">
+                <div id="overallBar" class="bar"></div>
+              </div>
+              <strong id="overallChartScore">-</strong>
+            </div>
+
+            <div class="chart-row">
+              <span>UI / UX</span>
+              <div class="bar-background">
+                <div id="uiBar" class="bar"></div>
+              </div>
+              <strong id="uiChartScore">-</strong>
+            </div>
+
+            <div class="chart-row">
+              <span>Performance</span>
+              <div class="bar-background">
+                <div id="performanceBar" class="bar"></div>
+              </div>
+              <strong id="performanceChartScore">-</strong>
+            </div>
+
+            <div class="chart-row">
+              <span>Accessibility</span>
+              <div class="bar-background">
+                <div id="accessibilityBar" class="bar"></div>
+              </div>
+              <strong id="accessibilityChartScore">-</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROAST -->
+
+        <div class="roast-card">
+          <div class="section-title">🔥 The Roast</div>
+
+          <p id="roast"></p>
+        </div>
+
+        <!-- STRENGTHS + IMPROVEMENTS -->
+
+        <div class="content-grid">
+          <div class="content-card">
+            <div class="section-title">✨ What's working</div>
+
+            <ul id="strengths"></ul>
+          </div>
+
+          <div class="content-card">
+            <div class="section-title">💡 What to improve</div>
+
+            <ul id="improvements"></ul>
+          </div>
+        </div>
+
+        <!-- SUMMARY -->
+
+        <div class="content-card">
+          <div class="section-title">📝 Overall feedback</div>
+
+          <p id="summary"></p>
+        </div>
+
+        <button class="try-again" onclick="resetPage()">
+          ← Review another portfolio
+        </button>
+      </section>
+
+      <!-- HOW IT WORKS -->
+
+      <section id="how" class="how">
+        <h2>How it works</h2>
+
+        <div class="steps">
+          <div>
+            <span>01</span>
+
+            <h3>Paste URL</h3>
+
+            <p>Give us your portfolio website.</p>
+          </div>
+
+          <div>
+            <span>02</span>
+
+            <h3>We analyse</h3>
+
+            <p>Our backend reads the website content.</p>
+          </div>
+
+          <div>
+            <span>03</span>
+
+            <h3>Get roasted</h3>
+
+            <p>Gemini gives useful feedback and suggestions.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Built as a student project • RoastMyPortfolio 🔥</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
